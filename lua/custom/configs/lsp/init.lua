@@ -6,6 +6,33 @@ local Lsp = {}
 
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 
+local function prettier_format()
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+
+  local text = table.concat(lines, '\n')
+
+  local file = vim.api.nvim_buf_get_name(0)
+
+  local result = vim.system({
+    "prettier", "--stdin-filepath", file
+  }, {
+    stdin = text
+  }):wait()
+
+
+  if result.code ~= 0 then
+    vim.notify(result.stderr, vim.log.levels.ERROR)
+    return
+  end
+
+  local view = vim.fn.winsaveview()
+
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(result.stdout, "\n", { plain = true }))
+
+  vim.fn.winrestview(view)
+end
+
+
 local function on_attach(_, bufnr)
   vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
   vim.api.nvim_create_autocmd("BufWritePre", {
@@ -85,7 +112,14 @@ local function ts_on_attach(client, bufnr)
   vim.keymap.set('n', '<leader>jsd', lspaction.eslintTsxDisable,
     { noremap = true, silent = true, desc = "insert tsx eslint disable" })
 
-  on_attach(client, bufnr)
+
+  vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = bufnr,
+    group = group,
+    callback = prettier_format,
+    desc = "[lsp] format on save",
+  })
 end
 
 local TsFileTypes = { "javascript", "typescript" }
