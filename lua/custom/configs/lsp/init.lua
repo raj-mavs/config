@@ -88,7 +88,16 @@ local function non_deno_root_dir(bufnr, on_dir)
   on_dir(project_root or vim.fn.getcwd())
 end
 
-local function ts_on_attach(client, bufnr)
+local function prettier_on_attach(_, bufnr)
+  vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = bufnr,
+    group = group,
+    callback = prettier_format,
+    desc = "[lsp] format on save",
+  })
+end
+local function ts_on_attach(_, bufnr)
   vim.keymap.set('n', '<leader>je', lspaction.tsExpectError,
     { noremap = true, silent = true, desc = "insert expects-errors" })
 
@@ -113,13 +122,7 @@ local function ts_on_attach(client, bufnr)
     { noremap = true, silent = true, desc = "insert tsx eslint disable" })
 
 
-  vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = bufnr,
-    group = group,
-    callback = prettier_format,
-    desc = "[lsp] format on save",
-  })
+  prettier_on_attach(_, bufnr)
 end
 
 local TsFileTypes = { "javascript", "typescript" }
@@ -202,11 +205,11 @@ Lsp.go = {
     }
   },
 
-  templ = {
-    cmd = { 'templ', 'lsp' },
-    filetypes = { 'templ' },
-    root_markers = { 'go.work', 'go.mod', '.git' },
-  }
+  -- templ = {
+  --   cmd = { 'templ', 'lsp' },
+  --   filetypes = { 'templ' },
+  --   root_markers = { 'go.work', 'go.mod', '.git' },
+  -- }
 }
 
 Lsp.c = {
@@ -299,7 +302,7 @@ Lsp.utility = {
 
   jsonls = {
     cmd = { "vscode-json-language-server", "--stdio" },
-    on_attach = on_attach,
+    on_attach = prettier_on_attach,
     settings = {
       json = {
         schemas = require('schemastore').json.schemas(),
@@ -307,10 +310,6 @@ Lsp.utility = {
       },
     },
     filetypes = { "json", "jsonc" },
-    format = {
-      enable = true,
-    },
-    trailingCommas = "none"
   },
 
   cssls = {
@@ -360,7 +359,6 @@ return {
     --     end
     --   end,
     -- })
-
 
     vim.diagnostic.config({ virtual_text = true, float = true, virtual_lines = true })
 
