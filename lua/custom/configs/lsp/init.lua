@@ -233,14 +233,14 @@ Lsp.sql = {
   },
 }
 
-Lsp.elixir = {
-  elixirls = {
-    cmd = { "language_server.sh" },
-    on_attach = on_attach,
-    filetypes = { "elixir" }
-  },
-
-}
+-- Lsp.elixir = {
+--   elixirls = {
+--     cmd = { "language_server.sh" },
+--     on_attach = on_attach,
+--     filetypes = { "elixir" }
+--   },
+--
+-- }
 
 local function python_on_attach(client, bufnr)
   vim.keymap.set('n', '<leader>tt', lspaction.type_ignore, { noremap = true, silent = true, desc = "Type Ignore" })

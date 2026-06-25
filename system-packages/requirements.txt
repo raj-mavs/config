@@ -1,8 +1,10 @@
 base 3-3
 base-devel 1-2
 clang 22.1.6-1
+firefox 152.0.1-1
 gcc 16.1.1+r12+g301eb08fa2c5-1
 git 2.54.0-1
+graphviz 14.1.5-1
 htop 3.5.1-1
 inetutils 2.8-1
 lua 5.5.0-2
