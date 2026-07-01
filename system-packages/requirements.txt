@@ -1,9 +1,9 @@
 base 3-3
 base-devel 1-2
 clang 22.1.6-1
-firefox 152.0.1-1
-gcc 16.1.1+r12+g301eb08fa2c5-1
-git 2.54.0-1
+firefox 152.0.4-1
+gcc 16.1.1+r346+g4e03491b401d-1
+git 2.55.0-1
 graphviz 14.1.5-1
 htop 3.5.1-1
 inetutils 2.8-1
@@ -17,6 +17,7 @@ net-tools 2.10-3
 nettle3 3.10.2-2
 nvm 0.40.5-1
 openssh 10.3p1-1
+protobuf 35.1-1
 python-pip 26.1.2-1
 python-pyzmq 27.1.0-2
 reflector 2023-5
@@ -26,9 +27,9 @@ texlive-fontsrecommended 2026.1-1
 texlive-latexextra 2026.1-1
 texlive-plaingeneric 2026.1-1
 texlive-xetex 2026.1-1
-tmux 3.6_b-2
+tmux 3.7-1
 unzip 6.0-23
-vim 9.2.0670-1
+vim 9.2.0735-1
 wget 1.25.0-5
 xclip 0.13-6
 zip 3.0-13
