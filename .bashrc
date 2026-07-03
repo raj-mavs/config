@@ -20,6 +20,7 @@ fi
 export GO_INSTALL="$HOME/.go"
 export GOPATH="$HOME/go"
 export BUN_INSTALL="$HOME/.bun"
+export LOCALSTACK_INSTALL="$HOME/.localstack"
 export FLAME_INSTALL="$HOME/.flamegraph"
 export ZIP_DIR="$HOME/Playground/SnapShot"
 export MKCERT="$HOME/.mkcert"
@@ -30,6 +31,7 @@ export PATH="$ZIP_DIR/bin:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$FLAME_INSTALL:$PATH"
 export PATH="$MKCERT:$PATH"
+export PATH="$LOCALSTACK_INSTALL:$PATH"
 
 mkcdir() {
   mkdir -p "$1" && cd "$1"
