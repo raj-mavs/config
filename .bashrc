@@ -13,8 +13,8 @@ PS1='[\u@\h \W]\$ '
 
 source /usr/share/nvm/init-nvm.sh
 
-if [ -f "$HOME/.github-token" ]; then
-  source "$HOME/.github-token"
+if [ -f "$HOME/.secret-token" ]; then
+  source "$HOME/.secret-token"
 fi
 
 export GO_INSTALL="$HOME/.go"
