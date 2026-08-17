@@ -4,10 +4,10 @@ clang 22.1.8-1
 cmake 4.4.2-1
 erlang 29.0.1-1
 erlang-core 29.0.1-1
-gcc 16.1.1+r595+g171d15ac6959-1
+gcc 16.2.1+r23+gd564253eb6c8-1
 git 2.55.0-1
-graphviz 15.1.1-1
-htop 3.5.2-1
+graphviz 16.0.0-1
+htop 3.5.3-1
 inetutils 2.8-1
 libreoffice-fresh 26.2.5-1
 lua 5.5.1-1
@@ -19,7 +19,7 @@ neovim 0.12.4-1
 net-tools 2.10-3
 nettle3 3.10.2-2
 nvm 0.40.5-1
-openssh 10.4p1-3
+openssh 10.5p1-1
 protobuf 35.1-1
 python-pip 26.2.1-1
 python-pyzmq 27.1.0-2
@@ -35,4 +35,4 @@ unzip 6.0-23
 vim 9.2.0849-1
 wget 1.25.0-6
 xclip 0.13-6
-zip 3.0-13
+zip 3.0-14
