@@ -338,6 +338,22 @@ Lsp.utility = {
   },
 }
 
+local function markdown_on_attach(client, bufnr)
+  vim.keymap.set('n', '<leader>ms', lspaction.markdownStrikethrough,
+    { noremap = true, silent = true, desc = "Toogle Markdown Strikethrough" })
+
+  on_attach(client, bufnr)
+end
+
+Lsp.markdown = {
+  marksman = {
+    cmd = { 'marksman', 'server' },
+    filetypes = { 'markdown' },
+    on_attach = markdown_on_attach,
+    single_file_support = true
+  }
+}
+
 local function LspConfig(table)
   for k, v in pairs(table) do
     vim.lsp.config(k, v)
