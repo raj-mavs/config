@@ -3,5 +3,6 @@ return {
     require("custom.configs.lsp.init").load_lsp()
     require("custom.commands.transparent-bg").load_commands()
     require("custom.commands.prettier-format").load_commands()
+    require("custom.commands.crlf-remover").load_commands()
   end
 }
