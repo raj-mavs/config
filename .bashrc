@@ -29,6 +29,7 @@ export ZIP_DIR="$HOME/Playground/SnapShot"
 export AUTOMATION="$HOME/Playground/Prompt-Automation"
 export MKCERT="$HOME/.mkcert"
 export ASDF="$HOME/.asdf/shims"
+export AWS_RIE="$HOME/.aws-lambda-rie"
 
 export PATH="$GO_INSTALL/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
@@ -38,6 +39,7 @@ export PATH="$FLAME_INSTALL:$PATH"
 export PATH="$MKCERT:$PATH"
 export PATH="$AUTOMATION/dist:$PATH"
 export PATH="$ASDF:$PATH"
+export PATH="$AWS_RIE:$PATH"
 
 mkcdir() {
   mkdir -p "$1" && cd "$1"

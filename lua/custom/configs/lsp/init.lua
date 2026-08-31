@@ -174,13 +174,6 @@ Lsp.ts = {
     filetypes = utils.extend(TsFileTypes, ReactFileTypes),
     root_dir = non_deno_root_dir
   },
-
-  -- tsgo = {
-  --   cmd = { "tsgo", "--lsp", "--stdio" },
-  --   on_attach = ts_on_attach,
-  --   filetypes = TsFileTypes,
-  --   root_dir = non_deno_root_dir
-  -- },
 }
 
 Lsp.go = {
