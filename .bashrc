@@ -21,8 +21,8 @@ if [ -f "$HOME/.aws-token" ]; then
   source "$HOME/.aws-token"
 fi
 
-export GO_INSTALL="$HOME/.go"
-export GOPATH="$HOME/go"
+export GO_INSTALL="/usr/bin/go"
+export GOPATH="$HOME/.go"
 export BUN_INSTALL="$HOME/.bun"
 export FLAME_INSTALL="$HOME/.flamegraph"
 export ZIP_DIR="$HOME/Playground/SnapShot"
