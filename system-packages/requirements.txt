@@ -25,6 +25,7 @@ python-pip 26.2.1-1
 python-pyzmq 27.2.0-1
 reflector 2023-5
 ripgrep 15.2.0-1
+rustup 1.29.1-1
 texlive-fontsextra 2026.1-1
 texlive-fontsrecommended 2026.1-1
 texlive-latexextra 2026.1-1

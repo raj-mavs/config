@@ -30,6 +30,7 @@ export AUTOMATION="$HOME/Playground/Prompt-Automation"
 export MKCERT="$HOME/.mkcert"
 export ASDF="$HOME/.asdf/shims"
 export AWS_RIE="$HOME/.aws-lambda-rie"
+export NVIM_HOME="$HOME/.config/nvim"
 
 export PATH="$GO_INSTALL/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
@@ -40,6 +41,7 @@ export PATH="$MKCERT:$PATH"
 export PATH="$AUTOMATION/dist:$PATH"
 export PATH="$ASDF:$PATH"
 export PATH="$AWS_RIE:$PATH"
+export PATH="$NVIM_HOME/scripts:$PATH"
 
 mkcdir() {
   mkdir -p "$1" && cd "$1"
