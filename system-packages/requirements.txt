@@ -33,6 +33,7 @@ texlive-plaingeneric 2026.1-1
 texlive-xetex 2026.1-1
 tmux 3.7_c-1
 unzip 6.0-23
+valkey 9.1.2-1
 vim 9.2.1011-1
 wget 1.25.0-6
 xclip 0.13-6
