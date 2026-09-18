@@ -15,5 +15,9 @@ return {
     end
 
     return list1
-  end
+  end,
+
+  defaultString = function(str, defaultStr)
+    return str or (defaultStr or "")
+  end,
 }

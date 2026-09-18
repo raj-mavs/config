@@ -1,6 +1,4 @@
-local function defaultString(str, defaultStr)
-  return str or (defaultStr or "")
-end
+local utils = require("custom.utils")
 
 local function expressComment(attrs)
   local cmd = "<ESC>O/**<CR>"
@@ -19,7 +17,7 @@ local function markdownStrikethrough()
   local ok, _, indent, line = string.find(curr, strikethroughRegex)
 
   if ok ~= nil then
-    vim.api.nvim_set_current_line(defaultString(indent) .. defaultString(line))
+    vim.api.nvim_set_current_line(utils.defaultString(indent) .. utils.defaultString(line))
     return
   end
 
@@ -27,7 +25,7 @@ local function markdownStrikethrough()
 
   _, _, indent, line = string.find(curr, indentRegex)
 
-  vim.api.nvim_set_current_line(defaultString(indent) .. "~~" .. defaultString(line) .. "~~" .. "  ")
+  vim.api.nvim_set_current_line(utils.defaultString(indent) .. "~~" .. utils.defaultString(line) .. "~~" .. "  ")
 end
 
 return {
