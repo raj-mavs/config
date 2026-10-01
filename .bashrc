@@ -32,6 +32,9 @@ export MKCERT="$HOME/.mkcert"
 export ASDF="$HOME/.asdf/shims"
 export AWS_RIE="$HOME/.aws-lambda-rie"
 export NVIM_HOME="$HOME/.config/nvim"
+export MAVS_HOME="$WINDOWS/Desktop/Project/Mavs/mavs-product"
+export MAVS="$MAVS_HOME/scripts/dev/logs"
+export LOCAL_BIN="$HOME/.local"
 
 export PATH="$GO_INSTALL/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
@@ -44,6 +47,7 @@ export PATH="$SNAPSHOT/bin:$PATH"
 export PATH="$ASDF:$PATH"
 export PATH="$AWS_RIE:$PATH"
 export PATH="$NVIM_HOME/scripts:$PATH"
+export PATH="$LOCAL_BIN/bin:$PATH"
 
 mkcdir() {
   mkdir -p "$1" && cd "$1"

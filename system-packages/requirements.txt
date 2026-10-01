@@ -1,10 +1,10 @@
 base 3-3
 base-devel 1-2
 clang 22.1.8-1
+cloc 2.10-1
 cmake 4.4.3-1
 erlang 29.0.1-1
 erlang-core 29.0.1-1
-firefox 154.0.1-1
 gcc 16.2.1+r23+gd564253eb6c8-1
 git 2.55.0-1
 graphviz 16.0.0-1
@@ -24,8 +24,8 @@ protobuf 36.0-1
 python-pip 26.2.1-1
 python-pyzmq 27.2.0-1
 reflector 2023-5
+remind 6.2.7-1
 ripgrep 15.2.0-1
-rustup 1.29.1-1
 texlive-fontsextra 2026.1-1
 texlive-fontsrecommended 2026.1-1
 texlive-latexextra 2026.1-1
@@ -33,6 +33,7 @@ texlive-plaingeneric 2026.1-1
 texlive-xetex 2026.1-1
 tmux 3.7_c-1
 unzip 6.0-23
+uv 0.12.10-1
 valkey 9.1.2-1
 vim 9.2.1011-1
 wget 1.25.0-6
